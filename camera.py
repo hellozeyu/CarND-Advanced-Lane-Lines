@@ -55,6 +55,6 @@ def correctCameraDistortion(image):
     dist_pickle = pickle.load(open('camera_cal_output/dist_pickle.p', "rb" ) )
     mtx = dist_pickle["mtx"]
     dist = dist_pickle["dist"]
-    img_size = (image.shape[1], image.shape[0])
+    # img_size = (image.shape[1], image.shape[0])
     dst = cv2.undistort(image, mtx, dist, None, mtx)
     return dst
