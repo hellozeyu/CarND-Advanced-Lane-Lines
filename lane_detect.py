@@ -190,10 +190,26 @@ def lanePipeline(image):
 
     # find the curvature of the left and right lane marker
     left_curverad,right_curverad = estimate_curvature(left_fitx,right_fitx,ploty)
+    position = findPositionInLane((img.shape[1]/2),left_fitx,right_fitx)
 
     result = drawOutput(orig_img, warped, left_fitx, right_fitx, ploty)
 
     text = 'Radius of Curvature: {:.0f}m'.format((left_curverad+right_curverad)/2.0)
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.putText(result,text,(10,25), font, 1,(255,255,255),2)
+
+    leftright='right'
+    if (position<0):
+      position=position*-1
+      leftright='left'
+
+    text = 'Vehicle is {:.2f}m {:s} of center'.format(position,leftright)
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(result,text,(10,50), font, 1,(255,255,255),2)
+
     return result
+
+def findPositionInLane(centerx, leftx,rightx):
+    center = (rightx + leftx) / 2
+    position = (centerx - center[719]) * 3.7 / 700
+    return position

@@ -80,7 +80,7 @@ I did this in lines 135 through 149 in my code in `lane_detect.py`. The function
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines 152 through 167 in `lane_detect.py` in the function called `drawOutput`.  Here is an example of my result on a test image:
+I implemented this step from lines 152 through 167 in `lane_detect.py` in the function called `drawOutput`. The car offset is calculated by the function called `findPositionInLane` from lines 212 through 215 in `lane_detect.py`. Here is an example of my result on a test image:
 
 ![alt text](test_images_output/final_output.png)
 
@@ -98,4 +98,4 @@ Here's a [link to my video result](./project_video_output.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Well, my approach is definitely not perfect as you can see it performs poorly on harder challenge video. I believe the most important reason is I didn't tune the find lane-line pixels function well since I am lacking the background of computer vision and it took me some time to digest the transformation between different color coordinates.
+Well, my approach is definitely not perfect as you can see it performs poorly on harder challenge video. I believe the most important reason is I didn't have enough background of computer vision to tune the find lane-line pixels function well. One thing I would definitely try afterwards is histogram equalization because it helps to improve the contrast of images and it will work better for the harder challenge video.
