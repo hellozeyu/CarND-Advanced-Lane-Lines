@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: ./examples/color_fit_lines.png "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -46,7 +46,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 The code can be found in the third code cell on the notebook.
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines 10 through 49 in `lane_detect.py`), a function called `color_gradient_pipeline`. I convert the image from RGB to HSV and just use one channel as "grayscale". Then we can use each function for grayscale, or h, or s, or v Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines 10 through 49 in `lane_detect.py`), a function called `color_gradient_pipeline`. I convert the image from RGB to HSL and just use one channel as "grayscale". Then we can use each function for grayscale, or h, or s, or l Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
 ![alt text](test_images_output/test1_binary.png)
 
